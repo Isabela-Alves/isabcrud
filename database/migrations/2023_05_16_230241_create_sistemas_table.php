@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('endereco');
             $table->string('telefone');
-            $table->string('especialidade');
+            $table->string('estilo');
             $table->float('preco');
             $table->foreignId('user_id');
         });
