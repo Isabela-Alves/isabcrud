@@ -1,22 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Sistema: Bar') }}
         </h2>
     </x-slot>
 
-	<style>
-		table {
-			width: 100%;
-			border-collapse: collapse;
-		}
-		th, td {
-			padding: 8px;
-			text-align: left;
-			border-bottom: 1px solid #ddd;
-		}
-       
-	</style>
+	
 
 <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" >
@@ -36,7 +25,7 @@
                 Telefone</th>
                 <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-800">
-                Especialidade</th>
+                Estilo</th>
                 <th
                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-800">
                 Preço</th>
@@ -65,7 +54,7 @@
               </td>
 
               <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                <div class="text-sm leading-5 text-white">{{$sistema ->especialidade}}
+                <div class="text-sm leading-5 text-white">{{$sistema ->estilo}}
                 </div>
               </td>
 
@@ -109,7 +98,14 @@
                                             <x-text-input name="nome" placeholder="Nome" value="{{$sistema ->nome}}" />
                                             <x-text-input name="endereco" placeholder="Endereco" value="{{$sistema ->endereco}}" />
                                             <x-text-input name="telefone" placeholder="Telefone" value="{{$sistema ->telefone}}" />
-                                            <x-text-input name="especialidade" placeholder="Especialidade" value="{{$sistema ->especialidade}}" />
+                                            <select name="estilo" placeholder="Estilo">
+                                                <option value="rock" @if($sistema -> estilo === 'rock') selected @endif>Rock</option>
+                                                <option value="samba" @if($sistema -> estilo === 'samba') selected @endif>Samba</option>
+                                                <option value="eletronica" @if($sistema -> estilo === 'eletronica') selected @endif>Eletrônica</option>
+                                                <option value="kpop" @if($sistema -> estilo === 'kpop') selected @endif>Kpop</option>
+                                                <option value="gospel" @if($sistema -> estilo === 'gospel') selected @endif>Gospel</option>
+                                                <option value="outros" @if($sistema -> estilo === 'outros') selected @endif>Outros</option>
+
                                             <x-text-input name="preco" placeholder="Preco" value="{{$sistema ->preco}}" />
                                             <x-primary-button class="w-full text-center mt-2">Salvar</x-primary-button>
                                         </form>
@@ -132,7 +128,15 @@
                         <x-text-input name="nome" placeholder="Nome" />
                         <x-text-input name="endereco" placeholder="Endereco" />
                         <x-text-input name="telefone" placeholder="Telefone" />
-                        <x-text-input name="especialidade" placeholder="Especialidade" />
+                        <select name="estilo" class="rounded-md">
+                            <option value="rock">Rock</option>
+                            <option value="samba">Samba</option>
+                            <option value="eletronica">Eletrônica</option>
+                            <option value="kpop">Kpop</option>
+                            <option value="gospel">Gospel</option>
+                            <option value="outros">Outros</option>
+                        </select>
+
                         <x-text-input name="preco" placeholder="Preco" />
                         <x-primary-button>Salvar</x-primary-button>
                     </form>
