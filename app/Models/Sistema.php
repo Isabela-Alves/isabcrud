@@ -13,7 +13,7 @@ class Sistema extends Model
         'nome', //meu bancoo,essas sao as entidades da minha tabela//
         'endereco',
         'telefone',
-        'especialidade',
+        'estilo',
         'preco',
         'user_id'
     ];
