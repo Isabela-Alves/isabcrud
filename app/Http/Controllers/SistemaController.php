@@ -31,7 +31,7 @@ class SistemaController extends Controller
             'nome' => $request->nome,
             'endereco' => $request->endereco,
             'telefone' => $request->telefone,
-            'especialidade' => $request->especialidade,
+            'estilo' => $request->estilo,
             'preco' => $request->preco
 
         ]);
@@ -59,7 +59,7 @@ class SistemaController extends Controller
         $sistema->nome = $request->nome;
         $sistema->endereco = $request->endereco;
         $sistema->telefone = $request->telefone;
-        $sistema->especialidade = $request->especialidade;
+        $sistema->estilo = $request->estilo;
         $sistema->preco = $request->preco;
         $sistema->save();
 
